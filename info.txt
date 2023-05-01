@@ -1,2 +1,2 @@
 
-To-do app project using HTML, CSS and JS
+To-do app project using HTML, CSS and JS.
