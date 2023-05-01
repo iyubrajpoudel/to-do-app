@@ -29,6 +29,7 @@ const addTask = () =>{
         listItem.setAttribute("onclick", "toogleChecked(this)");
         listItem.innerHTML=`<p>${taskInput.value}</p><span id="cross" onclick="removeItem(this)">X</span>`
         tasksList.appendChild(listItem);
+        saveData();
         taskInput.value="";
         taskInput.focus();
     }
@@ -37,7 +38,6 @@ const addTask = () =>{
 addButton.addEventListener("click", (e)=>{
     addTask();
 })
-
 
 
 // handeling Enter keypress to add task
@@ -53,6 +53,7 @@ function removeItem(element){
     // console.log(element);
     // console.log(element.parentNode);
     element.parentNode.remove();
+    saveData();
 }
 
 // document.querySelectorAll(".tasks-list li").addEventListener("click", (e)=>{
@@ -64,5 +65,21 @@ function toogleChecked(element){
     // console.log(element);
     // console.log(element.classList);
     element.classList.toggle('checked');
+    saveData();
 }
+
+// Working with local storage
+const saveData = ()=>{
+    localStorage.setItem("listData", tasksList.innerHTML);
+}
+
+const getData = ()=>{
+    return localStorage.getItem("listData");
+}
+
+const showData = ()=>{
+    tasksList.innerHTML = getData();
+}
+
+showData();
 
