@@ -113,7 +113,21 @@ ul.tasks-list li.checked::before{
 
 #cross{
     position: absolute;
-    top:0px;
+    top:0;
     right: 0;
+    font-size: 1.2rem;
+    font-weight: 600;
+    width: 40px;
+    padding: 6px;
+    border-radius: 50%;
+    text-align: center;
+    color: #555;
+}
+
+#cross:hover{
+    /* background-color: red; */
+    background-color: #ff5945;
+    color: #fff;
+    /* background-color: #edeef0; */
 }
 
